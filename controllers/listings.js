@@ -127,7 +127,7 @@ module.exports.show = async (req, res) => {
     }).populate("owner");
     if (!listing) {
         req.flash("error", "Listing is not available");
-        res.redirect("/listings");
+        return res.redirect("/listings");
     }
     res.render("listings/show", { listing });
 }
