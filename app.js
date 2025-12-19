@@ -48,13 +48,10 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
 const store = MongoStore.create({
-    mongoUrl: dbURL,
-    crypto: {
-        secret: process.env.SECRET,
-    },
-    touchAfter: 24 * 3600,
-})
-
+    client: mongoose.connection.getClient(),
+    crypto: { secret: process.env.SECRET || "fallbackSecret" },
+    touchAfter: 24 * 3600
+});
 store.on("error", (err) => {
     console.log("ERROR IN MONGO SESSION STORE", err);
 });
@@ -109,9 +106,6 @@ app.use((req, res, next) => {
 //    res.send(registerUser);
 // })
 
-app.get("/", (req, res) => {
-    res.redirect("/listings");
-});
 
 app.use("/listings", listings);
 app.use("/listings/:id/reviews", reviews);
