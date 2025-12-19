@@ -1,0 +1,127 @@
+body {
+  background-color: #efece3 !important; /* Soft white / light grey */
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+.add-btn {
+  background-color: #4a70a9 !important;
+  border: none !important;
+}
+.delete-btn {
+  background-color: #d22447 !important;
+  border: none !important;
+}
+/* navbar */
+
+.navbar {
+  height: 5rem;
+  background-color: #efece3;
+}
+.fa-mountain-sun {
+  font-size: 2rem;
+}
+.nav-link {
+  color: #222222 !important;
+}
+.navbar-brand {
+  color: #6a489d;
+}
+
+/* footer */
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-socials,
+.f-info-links,
+.f-info-nrand {
+  width: 100%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f-info-socials i {
+  margin-right: 1rem;
+}
+.f-info {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  height: 8rem;
+  background-color: #ebebeb;
+}
+/* 
+cards */
+.custom-card {
+  background-color: #ebebeb !important;
+  border: none !important;
+}
+.card-listing {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.card-body {
+  padding: 0 !important;
+}
+.row a {
+  text-decoration: none;
+}
+/* card effect */
+
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: #efece3;
+}
+
+/* show */
+.btn {
+  display: flex;
+}
+
+/* map  */
+
+#map {
+  height: 400px;
+  width: 80vh;
+  .lang-switcher {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    height: 30px;
+    padding: 10px 10px 0px 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #efece3;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Style only for Mozilla Firefox */
+  @-moz-document url-prefix() {
+    .lang-switcher {
+      padding: 10px;
+    }
+  }
+}

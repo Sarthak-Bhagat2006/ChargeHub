@@ -1,0 +1,67 @@
+<style>
+  .btn-search{
+    background-color: #4A70A9;
+    color: white;
+    border-radius: 25px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  
+  }
+  .btn-search:hover{
+    background-color: #8FABD4;
+    color: white;
+  }
+  .btn-search i{
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-input{
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    border-radius: 25px;
+  }
+  
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-plug-circle-check" style="color: #4A70A9; font-size: 32px;"></i>  ChargeHub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+      </div>
+      
+      <div class="navbar-nav ms-auto">
+        <div class="dropdown ms-auto">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Company
+          </button>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/listings?search=India">India</a></li>
+              <li><a class="dropdown-item" href="/listings?search=Italy">Italy</a></li>
+              <li><a class="dropdown-item" href="/listings?search=France">France</a></li>
+              <li><a class="dropdown-item" href="/listings?search=Spain">Spain</a></li>
+              <li><a class="dropdown-item" href="/listings?search=Thailand">Thailand</a></li>
+              <li><a class="dropdown-item" href="/listings?search=Japan">Japan</a></li>
+              <li><a class="dropdown-item" href="/listings?search=Indonesia">Indonesia</a></li>
+              
+          
+          </ul>
+        </div>
+        <form method="GET" class="d-flex" role="search">
+          <input class="search-input form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search </i></button>
+        </form>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Host a Charger</a>
+        <% if(!currUser){ %>
+
+        <a class="nav-link " href="/signup"><b>Sign Up</b></a>
+        <a class="nav-link" href="/login"><b>Log in </b></a>
+        <% } %> <% if(currUser){ %>
+        <a class="nav-link" href="/logout">Log out</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+
+            <br><br>
+    <h3>Host a Charger</h3>
+    <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+        
+        <div class="mb-3">
+            <label for="title" class="form-label">Type of Charger</label>
+            <input type="text" name="listing[title]" placeholder="Slow/Fast/Rapid Charger" class="form-control" required>
+            <div class="valid-feedback">Title looks good!</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" placeholder="Enter description" class="form-control" required></textarea>
+            <div class="invalid-feedback">Description should be valide </div>
+        </div>
+       
+        <div class="row">
+            <div class="mb-3 col-md-5">
+            <label for="image" class="form-label">Uplode Charger Image</label>   
+            <input type="file" name="listing[image]"  class="form-control required">  
+            </div>
+            <div class="mb-3 col-md-7">
+                <label for="phoneNo" class="form-label">Contact No.</label>
+                <input type="tel" name="listing[phoneNo]" placeholder="Contact"
+class="form-control" autocomplete="off" required
+pattern="[0-9]{10}" title="Enter 10-digit mobile number">
+                <div class="invalid-feedback">Contact should be valide </div>
+            </div>
+
+        </div>
+        
+        <div class="row">
+            <div class="mb-3 col-md-5">
+                <label for="price" class="form-label">Hourly Charging Fee</label>
+                <input type="number" name="listing[price]" placeholder="Enter price" class="form-control" required>   
+                <div class="invalid-feedback">Price should be valide </div>
+            </div>
+            <div class="mb-3 col-md-7">
+                <label for="company" class="form-label">Company</label>
+                <select class="form-select" aria-label="Default select example" name="listing[company]" required>
+                    <option value="" disabled selected>Choose Company</option>
+                    <option value="BMW">BMW</option>
+                    <option value="MG">MG</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="TATA">TATA</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="OLA">Skoda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="OLA">OLA</option>
+                  </select>
+                    <div class="invalid-feedback">Company should be selected </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-5 col-md-5">
+              <label class="form-label">Location</label>
+              <input type="text" name="listing[location]" placeholder="Enter location" class="form-control" required>
+            </div>
+          
+            <div class="mb-3 col-md-7">
+              <label class="form-label">Country</label>
+              <input type="text" name="listing[country]" placeholder="Enter country" class="form-control" required>
+            </div>
+          </div>
+        
+
+        <br>
+        <button type="submit" class="btn btn-dark add-btn">Add</button>
+        <br><br>
+    </form>
+</div>
+</div>
+</body>
+</html>
