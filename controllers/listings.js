@@ -87,29 +87,45 @@ module.exports.create = async (req, res) => {
 };
 
 module.exports.edit = async (req, res) => {
-    let { id } = req.params;
-    const listing = await Listing.findById(id);
-    let originalUrl = listing.image.url;
-    let newUrl = originalUrl.replace("/upload", "/upload/h_300,w_250")
-    res.render("listings/edit.ejs", { listing, newUrl });
+    try {
+        let { id } = req.params;
+        const listing = await Listing.findById(id);
+        if (!listing) {
+            req.flash("error", "Listing not found");
+            return res.redirect("/listings");
+        }
+
+        let newUrl = listing.image ? listing.image.url.replace("/upload", "/upload/h_300,w_250") : "";
+        return res.render("listings/edit.ejs", { listing, newUrl });
+    } catch (error) {
+        console.error("Error during edit:", error.message);
+        req.flash("error", "Error during edit");
+        return res.redirect("/listings");
+    }
 }
 
 module.exports.update = async (req, res) => {
-    if (!req.body.listing) {
-        throw new ExpressError(400, "send valid data for listing");
-    }
-    let { id } = req.params;
+    try {
+        let { id } = req.params;
 
-    let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing });
-    if (typeof req.file !== "undefined") {
-        let url = req.file.path;
-        let filename = req.filename;
+        if (!req.body.listing) {
+            throw new ExpressError(400, "send valid data for listing");
+        }
 
-        listing.image = { url, filename };
-        await listing.save();
+        let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing }, { new: true });
+
+        if (req.file) {
+            listing.image = { url: req.file.path, filename: req.file.filename };
+            await listing.save();
+        }
+
+        req.flash("success", "Listing Updated!");
+        return res.redirect(`/listings/${id}`);
+    } catch (error) {
+        console.error("Error during update:", error.message);
+        req.flash("error", error.message);
+        return res.redirect(`/listings/${req.params.id}/edit`);
     }
-    req.flash("success", " Listing Updated!");
-    res.redirect(`/listings/${id}`);
 }
 
 module.exports.deleteListing = async (req, res) => {
@@ -121,13 +137,21 @@ module.exports.deleteListing = async (req, res) => {
 }
 
 module.exports.show = async (req, res) => {
-    let { id } = req.params;
-    const listing = await Listing.findById(id).populate({
-        path: "reviews", populate: { path: "author" }
-    }).populate("owner");
-    if (!listing) {
-        req.flash("error", "Listing is not available");
+    try {
+        let { id } = req.params;
+        const listing = await Listing.findById(id)
+            .populate({ path: "reviews", populate: { path: "author" } })
+            .populate("owner");
+
+        if (!listing) {
+            req.flash("error", "Listing is not available");
+            return res.redirect("/listings");
+        }
+
+        return res.render("listings/show", { listing });
+    } catch (error) {
+        console.error("Error during show:", error.message);
+        req.flash("error", "Something went wrong");
         return res.redirect("/listings");
     }
-    res.render("listings/show", { listing });
 }
