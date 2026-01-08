@@ -2,7 +2,7 @@
 
 ## 🔗 Live Demo
 
-👉 https://your-live-link.com
+👉 [https://Charge-Hub-Live.com](https://charge-hub-delta.vercel.app/listings)
 
 
 <img width="1440" height="900" alt="Screenshot 2026-01-08 at 5 30 49 PM" src="https://github.com/user-attachments/assets/75b56e7c-7d42-4510-b2ce-13007ce5a974" />
@@ -17,8 +17,6 @@ It enables users to create and discover charging station listings, visualise loc
 
 🟡 **In Progress**  
 Core features are implemented and working. Additional improvements and optimisations are planned.
-
-*(If complete, write: 🟢 Production Ready)*
 
 ---
 
