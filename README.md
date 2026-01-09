@@ -22,23 +22,23 @@ Core features are implemented and working. Additional improvements and optimisat
 
 ## ✨ Features
 
-- 🔍 **Smart Search** – Search EV charging stations based on **car company** and **location**.
-- 🗺️ **Map-Based Discovery** – Integrated **Mapbox** to display charging stations with precise geolocation.
-- ⭐ **User Reviews & Ratings** – Users can add reviews to share charging experiences and feedback.
-- 🔐 **Authentication & Authorization** – Secure session-based authentication using **Passport.js**.
-- 🏗️ **MVC Architecture** – Backend structured with the **Model–View–Controller** pattern for scalability and maintainability.
-- 📊 **Efficient Data Management** – Well-designed schemas for listings, pricing, geolocation, and reviews.
-- 📱 **Responsive UI** – Optimised for both desktop and mobile devices.
+- **Smart Search** – Search EV charging stations based on **car company** and **location**.
+- **Map-Based Discovery** – Integrated **Mapbox** to display charging stations with precise geolocation.
+- **User Reviews & Ratings** – Users can add reviews to share charging experiences and feedback.
+- **Authentication & Authorization** – Secure session-based authentication using **Passport.js**.
+- **MVC Architecture** – Backend structured with the **Model–View–Controller** pattern for scalability and maintainability.
+- **Efficient Data Management** – Well-designed schemas for listings, pricing, geolocation, and reviews.
+- **Responsive UI** – Optimised for both desktop and mobile devices.
 
 ---
 
 ## 🚀 Future Enhancements
 
-- ⏰ Time-slot based booking for charging stations
-- 💳 Payment integration for seamless rentals
-- 🔔 Notification system for booking updates
-- 📈 Advanced filtering and sorting options
-- 📱 Improved mobile-first UI experience
+-  Time-slot based booking for charging stations
+-  Payment integration for seamless rentals
+-  Notification system for booking updates
+-  Advanced filtering and sorting options
+-  Improved mobile-first UI experience
 ---
 
 ## 🛠️ Tech Stack
