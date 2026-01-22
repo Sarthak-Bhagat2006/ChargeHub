@@ -28,7 +28,6 @@ Core features are implemented and working. Additional improvements and optimisat
 - **Authentication & Authorization** – Secure session-based authentication using **Passport.js**.
 - **MVC Architecture** – Backend structured with the **Model–View–Controller** pattern for scalability and maintainability.
 - **Efficient Data Management** – Well-designed schemas for listings, pricing, geolocation, and reviews.
-- **Responsive UI** – Optimised for both desktop and mobile devices.
 
 ---
 
@@ -70,3 +69,33 @@ Core features are implemented and working. Additional improvements and optimisat
 - Structuring full-stack applications with clean separation of concerns
 - Deploying and managing production-ready web applications
 
+## 🤝 How to Contribute
+
+Contributions are welcome! If you’d like to improve **ChargeHub**, you can follow the steps below 🚀
+
+```bash
+# Fork the repository on GitHub, then clone your fork
+git clone https://github.com/your-username/ChargeHub.git
+cd ChargeHub
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+
+# Add required environment variables in .env
+# MONGO_URI=your_mongodb_uri
+# MAPBOX_TOKEN=your_mapbox_token
+# SESSION_SECRET=your_secret
+
+# Run the project locally
+npm start
+
+# Create a new branch for your changes
+git checkout -b feature/your-feature-name
+
+# Commit and push your changes
+git add .
+git commit -m "Describe your change"
+git push origin feature/your-feature-name
